@@ -42,7 +42,7 @@ const Home = () => {
        </Grid>
         <Grid item xs={3}> Test auto deploy
         </Grid>
-        <Grid item xs={9}>Test2
+        <Grid item xs={9}>Test2 test1
         </Grid>
     </Grid>
   </div>
