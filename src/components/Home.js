@@ -40,7 +40,7 @@ const Home = () => {
              <IconButton className={classes.subNav}>Pin</IconButton>
            </Toolbar>
        </Grid>
-        <Grid item xs={3}> Test
+        <Grid item xs={3}> Test auto deploy
         </Grid>
         <Grid item xs={9}>Test2
         </Grid>
