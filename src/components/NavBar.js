@@ -18,7 +18,9 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import SyncTwoTone from '@material-ui/icons/SyncTwoTone';
-
+import BorderColorIcon from '@material-ui/icons/BorderColor';
+import {ModalManager} from 'react-dynamic-modal';
+import ComposeEmail from './ComposeEmail'
 // The Header creates links that can be used to navigate
 // between routes.
 const useStyles=makeStyles((theme)=>({
@@ -56,9 +58,12 @@ const useStyles=makeStyles((theme)=>({
 
 const NavBar = ()=>{
     const classes = useStyles();
+    const OpenModal=()=>{
+      ModalManager.open(<ComposeEmail onRequestClose={() => true}/>);
+    }
     return(
         <List component="nav" className={classes.root} aria-label="mailbox folders">
-        <IconButton className={classes.buttonIcon}>Compose</IconButton>
+        <IconButton className={classes.buttonIcon} onClick={OpenModal}><BorderColorIcon style={{paddingRight:12}}/> Compose</IconButton>
         <SyncTwoTone className={classes.syncIcon}/>
         <ListItem button>
           <ListItemText primary="Inbox" />

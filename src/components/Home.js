@@ -9,8 +9,6 @@ import {
   IconButton
 } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import SelectAllRounded from '@material-ui/icons/SelectAllRounded';
-
 import db from '../firebase.config';
 
 const useStyles=makeStyles((theme)=>({
@@ -29,7 +27,8 @@ const useStyles=makeStyles((theme)=>({
   }
 }));
 
-const Home = () => {
+
+const Home = () => {  
   const classes = useStyles();
   const [blogs,setBlogs]=useState([])
 const FetchBlogs=async()=>{
@@ -51,6 +50,8 @@ const FetchBlogs=async()=>{
 useEffect(() => {
   FetchBlogs();
 }, [])
+
+
   return(
   <div>
      <Grid container className={classes.root} >
@@ -80,7 +81,9 @@ useEffect(() => {
       }
     </div>
         </Grid>
-        <Grid item xs={9}>test1
+        <Grid item xs={9}>
+          test2
+       
         </Grid>
     </Grid>
   </div>
