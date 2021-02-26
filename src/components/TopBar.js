@@ -3,13 +3,10 @@ import { Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
   Badge,
-  Box,
-  Hidden,
   IconButton,
   Toolbar,
   makeStyles,
-  InputBase,
-  colors
+  InputBase
 } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import AppIcon from '@material-ui/icons/Apps';

@@ -1,10 +1,6 @@
 import React, {useState,useEffect}  from 'react'
 import {
-  Container,
-  Typography,
   makeStyles,
-  GridList,
-  AppBar,
   Toolbar,
   IconButton
 } from '@material-ui/core';
@@ -32,20 +28,14 @@ const Home = () => {
   const classes = useStyles();
   const [blogs,setBlogs]=useState([])
 const FetchBlogs=async()=>{
-  console.log("test");
   const response=db.collection('Inbox');
-  console.log("test1");
-  console.log(response);
   const data=await response.get();
-  console.log("data")
-  console.log(data);
+  console.log(data)
   data.docs.forEach(item=>{
-    console.log("check")
-    console.log(item.data())
    setBlogs([...blogs,item.data()])
+   console.log(item.data())
   })
-  console.log("test bolg")
-  console.log(blogs)
+  
 }
 useEffect(() => {
   FetchBlogs();
@@ -73,8 +63,8 @@ useEffect(() => {
           return(
             <div>
               <h4>{blog.From}</h4>
-              <h4>{blog.Body}</h4>
               <h4>{blog.Subject}</h4>
+              <h4>{blog.Message}</h4>
             </div>
           )
         })
