@@ -46,7 +46,7 @@ useEffect(() => {
 const Check=(event, data)=>
 {
   console.log("Check"+data.Subject)
-  setCurrentMail(...currentMail,data);
+  setCurrentMail(data);
 }
 
   return(
@@ -99,9 +99,13 @@ const Check=(event, data)=>
 
     
         </Grid>
-        <Grid item xs={8} container className={classes.root}>
+        <Grid item xs={8} container >
        {
-           <h1>{currentMail.Subject}</h1>
+         <div>           
+           <h3>{currentMail.From}</h3>
+           <h3>{currentMail.Subject}</h3>
+           <div dangerouslySetInnerHTML={{ __html: currentMail.Message}} />
+         </div>
        }
         </Grid>
     </Grid>
